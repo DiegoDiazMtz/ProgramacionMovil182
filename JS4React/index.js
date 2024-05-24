@@ -55,8 +55,26 @@ boton.addEventListener('click',function(){
 
 
 //----------------------------------------------*/
-/*
-const nombres= ["Diego","Maya","Pato"];
+
+// Trabajo con Arreglos 
+const nombres = ['Alan', 'Isa', 'Pablo', 'Juan Luis']
+ for (let i = 0 ; 1< nombres.length; i++){
+     const elemento = nombres[i]
+     console.log(elemento)
+ }
+
+ nombres.forEach(function (nombre){
+     console.log(nombre)
+ })
+
+// FUNCION MAP: Permite generar copia de un Array
+ const array2 = nombres.map(function (nombre){
+     console.log(nombre)
+    return nombre
+ })
+
+ console.log(nombres)
+ console.log(array2)
 
 //Funcion find: Ubicar elemento en un arreglo 
 const resultado = nombres.find(function(nombre){
