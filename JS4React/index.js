@@ -54,11 +54,11 @@ boton.addEventListener('click',function(){
 })
 
 
-//----------------------------------------------*/
+//----------------------------------------------
 
 // Trabajo con Arreglos 
-const nombres = ['Alan', 'Isa', 'Pablo', 'Juan Luis']
- for (let i = 0 ; 1< nombres.length; i++){
+const nombres = ['Diego', 'Isa', 'Pablo', 'Juan Luis']
+ for (let i = 0 ; i< nombres.length; i++){
      const elemento = nombres[i]
      console.log(elemento)
  }
@@ -67,6 +67,7 @@ const nombres = ['Alan', 'Isa', 'Pablo', 'Juan Luis']
      console.log(nombre)
  })
 
+ 
 // FUNCION MAP: Permite generar copia de un Array
  const array2 = nombres.map(function (nombre){
      console.log(nombre)
@@ -87,7 +88,6 @@ console.log(resultado);
 
 
 //Funcion filter: Recorre el arreglo filtrado resultados
-
 const resultdo = nombres.filter(function(nombre){
     if(nombre != 'Diego'){    
         return nombre;
@@ -113,5 +113,48 @@ import * as calc from './calculadora.js';
 
 console.log(suma(45,54));
 console.log(resta(45,54));
-
 */
+
+/*/Ejemplo cotidiano
+const ul = document.createElement('ul')
+
+let datos = fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(function (response){
+                console.log("Carga de datos completada")
+                return response.json()
+            }).then(function (data){
+                console.log(data)
+                data.forEach(function(post){
+                    const li = document.createElement('li')
+                    li.innerHTML = post.title //Traer por cada fila del JSON irla "imprimiendo" por c/u
+                    ul.append(li) //Mando mi "li" a "ul" para de ahí mandar solo "ul"
+                })
+                document.body.append(ul) //Para que mande la lista completa (ul) al body
+            })
+
+console.log('Cargando HTML')
+console.log('Cargando CSS')
+console.log('Cargando Imagenes')
+
+console.log(datos)
+*/
+
+
+//Ejemplo con Async
+const ul = document.createElement('ul')
+
+async function cargarDatos(){
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const datos = await response.json() //Traer los datos en json
+    console.log(datos) 
+    datos.forEach(function(post){
+        const li = document.createElement('li')
+        li.innerHTML = post.title //Traer por cada fila del JSON irla "imprimiendo" por c/u
+        ul.append(li) //Mando mi "li" a "ul" para de ahí mandar solo "ul"
+    })
+    document.body.append(ul) //Para que mande la lista completa (ul) al body
+}
+cargarDatos()
+console.log('Cargando HTML')
+console.log('Cargando CSS')
+console.log('Cargando Imagenes')
