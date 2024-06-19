@@ -74,3 +74,5 @@ const styles = StyleSheet.create({
   } 
   return(<Button title={contenido} color="#000000" onPress={actualizarContenido}>{contenido}</Button>) // Mandar llamar el evento 
 } */
+
+  
