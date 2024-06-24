@@ -27,24 +27,7 @@ export default function App() {
       <Text> Componente TextInput: {submit} </Text>
       <TextInput style={styles.TextInput} placeholder='Escribe texto ...' onChangeText={(t)=>setText(t) } value={text}/> 
       <Button title='Presioname...' onPress={()=>{setSubmit(text); alert('Texto enviado')}}/>
-      {/* <TouchableHighlight 
-        style={styles.touchable} 
-        onPress={() => {setSubmit(text); alert('TouchableHighlight presionado'); }}
-        underlayColor={"#DDDDDD"}
-      >
-        <View style={styles.button}>
-          <Text style={styles.buttonText}> TouchableHighlight Button </Text>
-        </View>
-        </TouchableHighlight> */}
-
-        {/* <TouchableOpacity
-          style={styles.touchable}
-          onPress={() => {setSubmit(text); alert('TouchableOpacity presionado'); }}
-        >
-          <View style={styles.button}>
-            <Text style={styles.buttonText}> TouchableOpacity Button </Text>
-          </View>
-        </TouchableOpacity> */}
+      
 
       <TouchableWithoutFeedback
         onPress={() => { setSubmit(text); alert('TouchableWithoutFeedback presionado'); }}
