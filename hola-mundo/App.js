@@ -1,46 +1,40 @@
 // Importaciones 
 import { StatusBar } from 'expo-status-bar';
-import { Button, FlatList, StyleSheet, Text, View, SectionList } from 'react-native';
+import { Button, FlatList, StyleSheet, Text, View, SectionList, ActivityIndicator } from 'react-native';
+import React, {useState,useEffect} from 'react'; //useEffect sirve para traer datos de una API
 
 //Existen componentes, area donde se va a ejecutar
 export default function App() {
 
+  const [user,setUser] = useState([]); // esto srive para traer datos de una API
+  const [loading,setLoading] = useState(true); 
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users') // aqui se trae los datos de la API
+    .then(response => response.json()) // aqui se convierte a json
+    .then(data => {setUser(data), setLoading(false)})   
+  },[])
+
+  if(loading){ // esto sirve para que muestre un mensaje de cargando
+    return (
+      <View style={styles.center}>
+      <ActivityIndicator size="large" color="#0000ff"/>
+      <Text> Cargando </Text>
+      </View>
+    );
+  }
 
   return (
 
     <View style={styles.container}>
       
-      <SectionList
-        sections={[
-          { title:'Grupo A:', 
-            data:[
-              {key:1,name:'Diego'},
-              {key:2,name:'Maya'},
-              {key:3,name:'Monse'},
-              {key:4,name:'Isay'},
-            ]
-          },
-          { title:'Grupo B:', 
-            data:[
-              {key:5,name:'Pablo'},
-              {key:6,name:'Alan'},
-              {key:7,name:'Victor'},
-            ]
-          },
-          { title:'Grupo C:', 
-            data:[
-              {key:8,name:'Isa'},
-              {key:9,name:'Elias'},
-              {key:10,name:'Roman'},
-              {key:11,name:'Juan'},
-            ]
-          },
-        ]}
+      <FlatList 
+      
+        data={user}
 
-        renderItem={({item}) => <Text style={styles.item}> {item.name} </Text>}
-        renderSectionHeader={({section}) => <Text style={styles.section}> {section.title} </Text>}
-
+        renderItem={({item}) => <Text style={styles.item}> {item.name}  </Text>}
       />
+      
 
       <StatusBar style="auto" />
     </View>
@@ -74,4 +68,9 @@ const styles = StyleSheet.create({
     height:50,
     borderColor:'black',
   },
+  center:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+  }
 });
