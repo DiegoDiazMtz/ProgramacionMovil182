@@ -12,7 +12,7 @@ export default function App() {
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users') // aqui se trae los datos de la API
     .then(response => response.json()) // aqui se convierte a json
-    .then(data => {setUser(data), setLoading(false)})   
+    .then(data => {setUser(data), setLoading(false)}) // aqui se guarda en la variable user
   },[])
 
   if(loading){ // esto sirve para que muestre un mensaje de cargando
@@ -30,9 +30,9 @@ export default function App() {
       
       <FlatList 
       
-        data={user}
+        data={user} // aqui se trae los datos de la API
 
-        renderItem={({item}) => <Text style={styles.item}> {item.name}  </Text>}
+        renderItem={({item}) => <Text style={styles.item}> {item.name}  </Text>} // aqui se muestra los datos de la API
       />
       
 

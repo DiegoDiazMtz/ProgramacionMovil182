@@ -56,39 +56,39 @@ export default function App() {
 // Configuraciones de hojas de estilos
 const styles = StyleSheet.create({
   background: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
+    flex: 1, //hace que la imagen ocupe toda la pantalla
+    resizeMode: 'cover', //hace que la imagen se ajuste al tamaño de la pantalla
+    justifyContent: 'center', //hace que la imagen se centre
   },
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
+    flex: 1, //hace que el contenedor ocupe toda la pantalla
+    alignItems: 'center', //hace que los elementos esten centrados
+    justifyContent: 'center', //hace que los elementos esten centrados
+    padding: 20, //hace que haya un espacio de 20px entre los elementos y los bordes
   },
   card: {
-    width: '90%',
-    padding: 20,
-    borderRadius: 10,
-    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Hacer el fondo del card semitransparente
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    width: '90%', //hace que el card ocupe el 90% del contenedor
+    padding: 20, //hace que haya un espacio de 20px entre los elementos y los bordes
+    borderRadius: 10, //hace que el card tenga las esquinas redondeadas
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', // hace que el card tenga un fondo blanco con opacidad
+    shadowColor: '#000', //hace que haya una sombra en el card
+    shadowOffset: { width: 0, height: 2 }, //hace que la sombra tenga un desplazamiento de 0px en el eje x y 2px en el eje y
+    shadowOpacity: 0.25, //hace que la sombra tenga una opacidad de 0.25
+    shadowRadius: 3.84, //hace que la sombra tenga un radio de 3.84
+    elevation: 5, //hace que la sombra tenga un efecto de elevación
   },
   inputContainer: {
-    marginBottom: 20,
+    marginBottom: 20, //hace que haya un espacio de 20px entre los elementos
   },
   label: {
-    fontSize: 16,
-    color: 'black',
-    marginBottom: 5,
+    fontSize: 16, //hace que el texto tenga un tamaño de 16
+    color: 'black', //hace que el texto sea negro
+    marginBottom: 5, // 
   },
   textInput: {
-    width: '100%',
-    height: 40,
-    borderColor: '#ccc',
+    width: '100%', 
+    height: 40, 
+    borderColor: '#ccc', //es para que se vea el borde del input
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   buttonText: {
-    color: '#fff',
+    color: '#fff', 
     fontSize: 16,
     fontWeight: 'bold',
   },
